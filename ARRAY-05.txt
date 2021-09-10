@@ -1,0 +1,37 @@
+Problem Link:
+
+Time Complexity: O(n)
+Space Complexity: O(n) {Using Hash Map}
+
+C++ Solution:
+
+class Solution {
+public:
+    vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
+        
+        
+        int n1=nums1.size();
+        int n2 = nums2.size();
+        
+        vector<int>v;
+        
+        set<int>h;
+        
+        for(int i=0;i<n1;i++)
+        {
+            h.insert(nums1[i]);
+        }
+        
+        
+         for(int i=0; i<n2; i++){
+            if(h.find(nums2[i]) != h.end())
+            {
+                if(find(v.begin(), v.end(), nums2[i]) == v.end())
+                {
+                    v.push_back(nums2[i]);
+                }
+            }
+        }
+     return v;
+    } 
+};
